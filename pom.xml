@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.rising</groupId>
+	<artifactId>sun</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>sun</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>9</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<!-- 开发环境 -->
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<mvn.jdbc.mysql.Driver>com.mysql.jdbc.Driver</mvn.jdbc.mysql.Driver>
+				<mvn.jdbc.mysql.url>jdbc:mysql://localhost:3306/sun?unicode=utf8</mvn.jdbc.mysql.url>
+				<mvn.jdbc.mysql.username>root</mvn.jdbc.mysql.username>
+				<mvn.jdbc.mysql.password>root</mvn.jdbc.mysql.password>
+				<mvn.log.business.level>DEBUG</mvn.log.business.level>
+				<mvn.log.lib.level>DEBUG</mvn.log.lib.level>
+				<mvn.app.name>basessm</mvn.app.name>
+				<mvn.domain>basessm</mvn.domain>
+			</properties>
+		</profile>
+
+		<!-- 测试环境 -->
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<mvn.jdbc.mysql.Driver>com.mysql.jdbc.Driver</mvn.jdbc.mysql.Driver>
+				<mvn.jdbc.mysql.url>jdbc:mysql://localhost:3306/sun?unicode=utf8</mvn.jdbc.mysql.url>
+				<mvn.jdbc.mysql.username>root</mvn.jdbc.mysql.username>
+				<mvn.jdbc.mysql.password>root</mvn.jdbc.mysql.password>
+				<mvn.log.business.level>DEBUG</mvn.log.business.level>
+				<mvn.log.lib.level>DEBUG</mvn.log.lib.level>
+				<mvn.app.name>basessm</mvn.app.name>
+				<mvn.domain>basessm</mvn.domain>
+			</properties>
+		</profile>
+
+		<!-- 生产环境 -->
+		<profile>
+			<id>product</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<mvn.jdbc.mysql.Driver>com.mysql.jdbc.Driver</mvn.jdbc.mysql.Driver>
+				<mvn.jdbc.mysql.url>jdbc:mysql://localhost:3306/sun?unicode=utf8</mvn.jdbc.mysql.url>
+				<mvn.jdbc.mysql.username>root</mvn.jdbc.mysql.username>
+				<mvn.jdbc.mysql.password>root</mvn.jdbc.mysql.password>
+				<mvn.log.business.level>DEBUG</mvn.log.business.level>
+				<mvn.log.lib.level>DEBUG</mvn.log.lib.level>
+				<mvn.app.name>basessm</mvn.app.name>
+				<mvn.domain>basessm</mvn.domain>
+			</properties>
+		</profile>
+	</profiles>
+
+</project>
