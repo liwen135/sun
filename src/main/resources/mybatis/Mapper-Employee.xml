@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="EmployeeDao">
+	
+	 <resultMap id="LotViewMap" type="Employee" >
+        <result column="id" property="id" jdbcType="int" />
+        <result column="emp_name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="VARCHAR" />
+
+
+    </resultMap>
+    
+    <select id="getEmployee" resultType="Employee" parameterType="int">
+		SELECT * FROM employee_t
+		where id = {#id}
+
+	</select>
+
+    
+
+</mapper>
