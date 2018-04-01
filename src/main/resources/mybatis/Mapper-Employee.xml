@@ -12,8 +12,7 @@
     </resultMap>
     
     <select id="getEmployee" resultType="Employee" parameterType="int">
-		SELECT * FROM employee_t
-		where id = {#id}
+		SELECT * FROM employee_t where id = {#id}
 
 	</select>
 

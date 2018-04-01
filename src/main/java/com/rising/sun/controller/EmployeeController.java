@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller("/employee")
+@Controller
+@RequestMapping("/employee")
 public class EmployeeController {
     private EmployeeService employeeService;
 
