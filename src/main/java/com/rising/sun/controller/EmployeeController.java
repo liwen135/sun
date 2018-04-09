@@ -2,16 +2,33 @@ package com.rising.sun.controller;
 
 import com.rising.sun.domain.Employee;
 import com.rising.sun.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/employee")
+@ComponentScan(basePackages = {"com.rising.sun.service"})
+@EnableAutoConfiguration
 public class EmployeeController {
+    private final Logger log = LoggerFactory.getLogger(EmployeeController.class);
+    @Resource
     private EmployeeService employeeService;
+
+    @RequestMapping("/index")
+    @ResponseBody
+    public String hello() {
+        return "hello world!";
+    }
+
 
     @RequestMapping("/get")
     public Object index() {
@@ -21,7 +38,9 @@ public class EmployeeController {
     }
 
     @RequestMapping("/getEmployee")
+    @ResponseBody
     public Employee getEmployee(int id) {
+        log.info("查询员工信息！");
         return employeeService.getEmployee(id);
     }
 }

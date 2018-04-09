@@ -4,7 +4,14 @@ public class Employee {
 
     private int id;
     private String name;
+    private String passWord;
     private int age;
+
+    public Employee(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 
     public int getId() {
         return id;
@@ -28,5 +35,13 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 }
