@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -39,8 +40,16 @@ public class EmployeeController {
 
     @RequestMapping("/getEmployee")
     @ResponseBody
-    public Employee getEmployee(int id) {
+    public Employee getEmployee(@RequestParam("id") int id) {
         log.info("查询员工信息！");
         return employeeService.getEmployee(id);
+    }
+
+
+    @RequestMapping("/add")
+    @ResponseBody
+    String add() {
+        employeeService.inserEmployee("username123寇鑫", 20, "password123寇鑫");
+        return "插入成功";
     }
 }

@@ -6,4 +6,5 @@ public interface EmployeeService {
 
     Employee getEmployee(int id);
 
+    int inserEmployee(String username, int age, String password);
 }

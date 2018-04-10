@@ -3,13 +3,23 @@ package com.rising.sun.domain;
 public class Employee {
 
     private int id;
-    private String name;
+    private String userName;
     private String passWord;
     private int age;
 
-    public Employee(int id, String name, int age) {
+    public Employee() {
+    }
+
+    public Employee(String userName, String passWord, int age) {
+        this.userName = userName;
+        this.passWord = passWord;
+        this.age = age;
+    }
+
+    public Employee(int id, String userName, String passWord, int age) {
         this.id = id;
-        this.name = name;
+        this.userName = userName;
+        this.passWord = passWord;
         this.age = age;
     }
 
@@ -21,20 +31,12 @@ public class Employee {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassWord() {
@@ -43,5 +45,13 @@ public class Employee {
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
