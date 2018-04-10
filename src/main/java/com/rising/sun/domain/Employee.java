@@ -1,34 +1,12 @@
 package com.rising.sun.domain;
 
-public class Employee {
+public class Employee extends Param {
 
-    private int id;
     private String userName;
     private String passWord;
-    private int age;
+    private Integer age;
 
     public Employee() {
-    }
-
-    public Employee(String userName, String passWord, int age) {
-        this.userName = userName;
-        this.passWord = passWord;
-        this.age = age;
-    }
-
-    public Employee(int id, String userName, String passWord, int age) {
-        this.id = id;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.age = age;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUserName() {
@@ -47,11 +25,20 @@ public class Employee {
         this.passWord = passWord;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
