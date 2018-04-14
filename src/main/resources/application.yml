@@ -1,12 +1,26 @@
 ---
+server:
+  port: 80
+  session:
+    timeout: 3600
 spring:
+  freemarker:
+    cache: false
+    request-context-attribute: request
+
   datasource:
-    name: mydb
+    name: msyql
     type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sun
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 mybatis:
   mapperLocations: classpath*:mybatis/mapper-*.xml
   typeAliasesPackage: com.rising.sun.domain

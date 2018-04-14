@@ -1,4 +1,4 @@
-package com.rising.sun.dao.employeeDao;
+package com.rising.sun.dao.testDao;
 
 import com.rising.sun.domain.Employee;
 import org.apache.ibatis.annotations.Insert;

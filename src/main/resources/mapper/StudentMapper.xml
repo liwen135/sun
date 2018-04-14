@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rising.sun.dao.testDao.StudentDao">
+
+    <select id="selectStudentById" resultType="com.rising.sun.domain.Student">
+      SELECT * FROM t_student WHERE id =  #{id}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO t_student (stu_name,create_time,update_time,create_user,update_user) valuse(
+     #{stuName,jdbcType=VARCHAR},
+        now(),
+        now(),
+        #{createUser,jdbcType=VARCHAR},
+        #{createUser,jdbcType=VARCHAR}
+        )
+    </insert>
+
+
+</mapper>

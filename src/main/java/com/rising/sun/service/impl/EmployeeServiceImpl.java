@@ -1,6 +1,6 @@
 package com.rising.sun.service.impl;
 
-import com.rising.sun.dao.employeeDao.EmployeeDao;
+import com.rising.sun.dao.testDao.EmployeeDao;
 import com.rising.sun.domain.Employee;
 import com.rising.sun.service.EmployeeService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
