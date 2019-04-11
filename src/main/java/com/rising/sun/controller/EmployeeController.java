@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -24,21 +25,21 @@ public class EmployeeController {
     @Resource
     private EmployeeService employeeService;
 
-    @RequestMapping("/index")
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     @ResponseBody
     public String hello() {
         return "hello world!";
     }
 
 
-    @RequestMapping("/get")
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     public Object index() {
         Map map = new HashMap();
         map.put("username", "张三");
         return map;
     }
 
-    @RequestMapping("/getEmployee")
+    @RequestMapping(value = "/getEmployee", method = RequestMethod.GET)
     @ResponseBody
     public Employee getEmployee(@RequestParam("id") int id) {
         log.info("查询员工信息！");
@@ -46,7 +47,7 @@ public class EmployeeController {
     }
 
 
-    @RequestMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     @ResponseBody
     String add() {
         employeeService.inserEmployee("username123寇鑫", 20, "password123寇鑫");
